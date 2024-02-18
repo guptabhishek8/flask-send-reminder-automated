@@ -1,3 +1,4 @@
-URL_OF_WEBSITE = {
-        'url_of_website': "www/xyz.com"
+OUTLOOK_EMAIL_SERVICE = {
+        "PORT"  : 587,
+        "SERVER" : "smtp-mail.outlook.com"
     }

@@ -5,10 +5,9 @@ from logger import setup_logging
 # import psycopg2
 
 from api.restplus import api
-from api.flask_app.endpoints.coreEndpoints import flask_logic1_ns
-from api.flask_app.endpoints.systemEndpoints import system_ns
+from api.flask_app.endpoints.email_endpoints import email_ns
+from api.flask_app.endpoints.system_endpoints import system_ns
 from api.flask_app.scheduler.scheduler_util import initialize_scheduler, schedule_tasks
-from settings import MYSQL_UNDERWRITING_HOST, MYSQL_UNDERWRITING_DB, MYSQL_UNDERWRITING_PASSWORD, MYSQL_UNDERWRITING_USER, POSTGRES_UNDERWRITING_HOST_READ,POSTGRES_UNDERWRITING_DB_READ, POSTGRES_UNDERWRITING_PASSWORD_READ, POSTGRES_UNDERWRITING_USER_READ,MYSQL_UNDERWRITING_USER_READ_ONLY,MYSQL_UNDERWRITING_PASSWORD_READ_ONLY
 
 
 logger = logging.getLogger("flask_app")
@@ -43,7 +42,7 @@ def initialize_app(flask_app,config = 'settings'):
     # Register API blueprint
     blueprint = Blueprint("api", __name__, url_prefix = '/v1')
     api.init_app(blueprint)
-    api.add_namespace(flask_logic1_ns)
+    api.add_namespace(email_ns)
     api.add_namespace(system_ns)
 
 

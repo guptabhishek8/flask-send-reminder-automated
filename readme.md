@@ -1,6 +1,6 @@
 # Flask Project Structure
 
-This repository contains a Flask project with a well-organized directory structure for building web applications using Flask.
+This repository contains a Flask project to send a automated reminder.
 
 ## Project Structure
 
